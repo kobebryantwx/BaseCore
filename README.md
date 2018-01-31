@@ -3,6 +3,7 @@
 
 [![API](https://img.shields.io/badge/API-15%2B-blue.svg)](https://android-arsenal.com/api?level=15#l15)
 [![alpha](https://img.shields.io/badge/alpha-1.0.0-blue.svg)]()
+[![](https://jitpack.io/v/kobebryantwx/BaseCore.svg)](https://jitpack.io/#kobebryantwx/BaseCore)
 
 适用于MVP架构模式的**Android快速开发框架**。
 
