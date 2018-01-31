@@ -1,6 +1,4 @@
 
-![QuickCore](http://omkx1cfwq.bkt.clouddn.com/quick-core-logo.png)
-
 # QuickCore
 
 [![API](https://img.shields.io/badge/API-15%2B-blue.svg)](https://android-arsenal.com/api?level=15#l15)
@@ -17,7 +15,7 @@
 下载或`clone`工程
 
 ```
-> git clone https://git.oschina.net/militch/quickcore.git
+> git clone
 ```
 
 导入`Module`到项目中，并且添加`Gradle`依赖
