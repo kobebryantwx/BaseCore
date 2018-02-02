@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.kbryant.quickcore.core.HasDaggerApplication;
 import com.kbryant.quickcore.core.HasDaggerInject;
 import com.kbryant.quickcore.di.component.AppComponent;
-import com.kbryant.quickcore.core.HasDaggerApplication;
 
 public class DaggerActivityCallback<T> implements Application.ActivityLifecycleCallbacks {
     private AppComponent appComponent;
