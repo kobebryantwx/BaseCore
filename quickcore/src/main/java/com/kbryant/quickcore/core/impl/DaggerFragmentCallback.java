@@ -8,6 +8,7 @@ import com.kbryant.quickcore.core.HasDaggerInject;
 
 public class DaggerFragmentCallback<T> extends FragmentManager.FragmentLifecycleCallbacks {
     private T call;
+
     public DaggerFragmentCallback(T call) {
         this.call = call;
     }
@@ -16,7 +17,7 @@ public class DaggerFragmentCallback<T> extends FragmentManager.FragmentLifecycle
     @SuppressWarnings("unchecked")
     public void onFragmentAttached(FragmentManager fm, Fragment f, Context context) {
         super.onFragmentAttached(fm, f, context);
-        if(f instanceof HasDaggerInject){
+        if (f instanceof HasDaggerInject) {
             HasDaggerInject<T> hasDaggerInject = (HasDaggerInject<T>) f;
             hasDaggerInject.inject(call);
         }
