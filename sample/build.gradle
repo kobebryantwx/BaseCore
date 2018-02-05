@@ -25,11 +25,11 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:25.4.0'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
-    //    implementation 'com.github.kobebryantwx:BaseCore:1.0.1-lib'
+
+//    implementation 'com.github.kobebryantwx:BaseCore:1.0.0-lib'
 //    annotationProcessor 'com.github.kobebryantwx:BaseCore:1.0.1-compiler'
 
     implementation project(':quickcore')
     annotationProcessor project(':quickcore-compiler')
-//    implementation project(':quickcore-annotation')
 }
 
