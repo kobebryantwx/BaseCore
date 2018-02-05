@@ -28,5 +28,5 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:25.3.1'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
     implementation project(':quickcore')
-    annotationProcessor project(':quickcore-compiler')
+    annotationProcessor 'com.github.kobebryantwx:BaseCore:1.0.0-compiler'
 }
