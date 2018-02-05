@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+//apply plugin: 'bintray-release'
 apply plugin: 'com.github.dcendents.android-maven'
 group = 'com.github.kobebryantwx'
 android {
@@ -25,7 +26,17 @@ android {
     compileOptions {
     }
 }
-
+//添加
+//publish {
+//    artifactId = 'basecore-lib'
+//    userOrg = rootProject.userOrg
+//    groupId = rootProject.groupId
+//    uploadName = rootProject.uploadName
+//    publishVersion = rootProject.publishVersion
+//    desc = rootProject.description
+//    website = rootProject.website
+//    licences = rootProject.licences
+//}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
 
@@ -35,7 +46,7 @@ dependencies {
     api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     api 'com.google.dagger:dagger:2.11'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
-    compile 'com.github.kobebryantwx.BaseCore:quickcore-annotation:1.0.1-annotation'
+    compile 'com.BaseCore:basecore-annotation:1.0.0'
     api "io.reactivex.rxjava2:rxjava:2.1.1"
     api 'io.reactivex.rxjava2:rxandroid:2.0.1'
 }

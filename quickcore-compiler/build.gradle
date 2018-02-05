@@ -1,12 +1,25 @@
 apply plugin: 'java'
+//apply plugin: 'bintray-release'
 //apply plugin: 'com.github.dcendents.android-maven'
 //group='com.github.kobebryantwx'
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.squareup:javapoet:1.8.0'
-    compile 'com.github.kobebryantwx.BaseCore:quickcore-annotation:1.0.1-annotation'
+    compile 'com.BaseCore:basecore-annotation:1.0.0'
 }
 sourceCompatibility=JavaVersion.VERSION_1_7
 targetCompatibility=JavaVersion.VERSION_1_7
+
+//添加
+//publish {
+//    artifactId = 'basecore-compiler'
+//    userOrg = rootProject.userOrg
+//    groupId = rootProject.groupId
+//    uploadName = rootProject.uploadName
+//    publishVersion = rootProject.publishVersion
+//    desc = rootProject.description
+//    website = rootProject.website
+//    licences = rootProject.licences
+//}
 
