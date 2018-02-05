@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'bintray-release'
-apply plugin: 'com.github.dcendents.android-maven'
-group = 'com.github.kobebryantwx'
+apply plugin: 'bintray-release'
+//apply plugin: 'com.github.dcendents.android-maven'
+//group = 'com.github.kobebryantwx'
 android {
     compileSdkVersion 25
     buildToolsVersion "26.0.2"
@@ -27,16 +27,16 @@ android {
     }
 }
 //添加
-//publish {
-//    artifactId = 'basecore-lib'
-//    userOrg = rootProject.userOrg
-//    groupId = rootProject.groupId
-//    uploadName = rootProject.uploadName
-//    publishVersion = rootProject.publishVersion
-//    desc = rootProject.description
-//    website = rootProject.website
-//    licences = rootProject.licences
-//}
+publish {
+    artifactId = 'basecore-lib'
+    userOrg = rootProject.userOrg
+    groupId = rootProject.groupId
+    uploadName = rootProject.uploadName
+    publishVersion = rootProject.publishVersion
+    desc = rootProject.description
+    website = rootProject.website
+    licences = rootProject.licences
+}
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
 

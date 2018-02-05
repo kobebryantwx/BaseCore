@@ -14,21 +14,22 @@ public class DaggerActivityCallback<T> implements Application.ActivityLifecycleC
     private AppComponent appComponent;
     private HasDaggerApplication<T> hasDaggerApplication;
     private T call;
-    public DaggerActivityCallback(HasDaggerApplication<T> hasDaggerApplication,AppComponent appComponent){
+
+    public DaggerActivityCallback(HasDaggerApplication<T> hasDaggerApplication, AppComponent appComponent) {
         this.hasDaggerApplication = hasDaggerApplication;
         this.appComponent = appComponent;
     }
+
     @Override
     @SuppressWarnings("unchecked")
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
-        Log.e(getClass().getSimpleName(),"-onActivityCreated");
-        if(activity instanceof HasDaggerInject){
+        call = hasDaggerApplication.activityComponent(appComponent);
+        if (activity instanceof HasDaggerInject) {
             HasDaggerInject<T> callActivity = (HasDaggerInject<T>) activity;
-            call = hasDaggerApplication.activityComponent(appComponent);
             callActivity.inject(call);
         }
         DaggerFragmentCallback<T> daggerFragmentCallback = new DaggerFragmentCallback<>(call);
-        ((AppCompatActivity) activity).getSupportFragmentManager().registerFragmentLifecycleCallbacks(daggerFragmentCallback,true);
+        ((AppCompatActivity) activity).getSupportFragmentManager().registerFragmentLifecycleCallbacks(daggerFragmentCallback, true);
     }
 
 

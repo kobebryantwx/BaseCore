@@ -42,7 +42,7 @@ ext {
     userOrg = 'wxbryant'
     groupId = 'com.BaseCore'
     uploadName = 'BaseCore'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'BaseCore'
     website = 'https://github.com/kobebryantwx/BaseCore'
     licences = ['Apache-2.0']
