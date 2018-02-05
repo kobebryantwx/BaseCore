@@ -20,12 +20,13 @@ import javax.lang.model.util.Types;
 import quickcore.annotation.Repository;
 import quickcore.compiler.out.RepositoryStoreHelper;
 
-public class QuickCoreCompiler  extends AbstractProcessor{
+public class QuickCoreCompiler extends AbstractProcessor {
     private Elements elements;
     private Types types;
     private Filer filer;
     private Messager messager;
-    private HashMap<String,ClassName> repositorys = new HashMap<String, ClassName>();
+    private HashMap<String, ClassName> repositorys = new HashMap<String, ClassName>();
+
     @Override
     public synchronized void init(ProcessingEnvironment processingEnv) {
         super.init(processingEnv);
@@ -47,14 +48,18 @@ public class QuickCoreCompiler  extends AbstractProcessor{
         findService(roundEnv);
         return true;
     }
-    private void findService(RoundEnvironment roundEnv){
-        for(Element element : roundEnv.getElementsAnnotatedWith(Repository.class)){
-            if(element.getKind().isInterface()){
+
+    private void findService(RoundEnvironment roundEnv) {
+        String packageName = "com.kbryant.quickcore.repository";
+        for (Element element : roundEnv.getElementsAnnotatedWith(Repository.class)) {
+            if (element.getKind().isInterface()) {
                 PackageElement te = (PackageElement) element.getEnclosingElement();
-                ClassName className = ClassName.get(te.getQualifiedName().toString(),element.getSimpleName().toString());
-                repositorys.put(element.getSimpleName().toString(),className);
+                ClassName className = ClassName.get(te.getQualifiedName().toString(), element.getSimpleName().toString());
+                repositorys.put(element.getSimpleName().toString(), className);
+//                packageName = elements.getPackageOf(element).getQualifiedName().toString();
             }
         }
-        RepositoryStoreHelper.getInstance(repositorys).outJavaFile(filer);
+//        System.out.print("packageName=" + packageName);
+        RepositoryStoreHelper.getInstance(repositorys).outJavaFile(filer, packageName);
     }
 }

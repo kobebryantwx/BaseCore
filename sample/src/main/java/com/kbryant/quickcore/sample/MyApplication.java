@@ -7,14 +7,15 @@ import com.kbryant.quickcore.di.component.AppComponent;
 import com.kbryant.quickcore.core.HasDaggerApplication;
 import com.kbryant.quickcore.di.module.GlobalConfigModule;
 import com.kbryant.quickcore.di.module.HttpConfigModule;
-import com.kbryant.quickcore.repository.AutoInjectRepository;
 
 
 public class MyApplication extends Application implements HasDaggerApplication<ActivityComponent> {
     //对象实例
     private static MyApplication instance;
+
     /**
      * 获取对象实例
+     *
      * @return 对象实例
      */
     public static MyApplication getInstance() {
