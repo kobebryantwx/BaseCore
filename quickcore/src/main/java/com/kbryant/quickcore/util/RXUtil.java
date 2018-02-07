@@ -15,10 +15,11 @@ import io.reactivex.schedulers.Schedulers;
 public class RXUtil {
     /**
      * 统一线程切换处理
+     *
      * @param <T> 对象类型
      * @return Flowable转换器
      */
-    public static <T> FlowableTransformer<T, T> rxSchedulerHelper(){
+    public static <T> FlowableTransformer<T, T> rxSchedulerHelper() {
         return new FlowableTransformer<T, T>() {
             @Override
             public Publisher<T> apply(@NonNull Flowable<T> upstream) {
@@ -33,20 +34,21 @@ public class RXUtil {
 
     /**
      * 统一结果处理
+     *
      * @param <T> 对象类型
      * @return Flowable转换器
      */
-    public static <T> FlowableTransformer<RespBase<T>,T> handleRespBaseResult(){
-        return new FlowableTransformer<RespBase<T>,T>(){
+    public static <T> FlowableTransformer<RespBase<T>, T> handleRespBaseResult() {
+        return new FlowableTransformer<RespBase<T>, T>() {
             @Override
             public Publisher<T> apply(@NonNull Flowable<RespBase<T>> upstream) {
                 return upstream.flatMap(new Function<RespBase<T>, Publisher<T>>() {
                     @Override
                     public Publisher<T> apply(@NonNull RespBase<T> tRespBase) throws Exception {
-                        if(tRespBase.getCode() == 1){
+                        if (tRespBase.getCode() == 0) {
                             return createData(tRespBase.getData());
-                        }else{
-                            return Flowable.error(new ApiException(tRespBase.getMsg(),tRespBase.getCode(),tRespBase.getIs_alert()==1));
+                        } else {
+                            return Flowable.error(new ApiException(tRespBase.getMsg(), tRespBase.getCode(), tRespBase.getIs_alert() == 1));
                         }
                     }
                 });
@@ -56,11 +58,12 @@ public class RXUtil {
 
     /**
      * 新建流对象
-     * @param t 传输对象
+     *
+     * @param t   传输对象
      * @param <T> 对象类型
      * @return 流对象
      */
-    private static <T> Flowable<T> createData(final T t){
+    private static <T> Flowable<T> createData(final T t) {
         return Flowable.create(new FlowableOnSubscribe<T>() {
             @Override
             public void subscribe(@NonNull FlowableEmitter<T> e) throws Exception {
