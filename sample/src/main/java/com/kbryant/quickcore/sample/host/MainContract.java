@@ -6,13 +6,16 @@ import com.kbryant.quickcore.mvp.IPresenter;
 import com.kbryant.quickcore.sample.bean.UserInfo;
 
 public interface MainContract {
-    interface View extends AbsListView<UserInfo>{
+    interface View extends AbsListView<UserInfo> {
     }
-    interface InnerView extends BaseView{
+
+    interface InnerView extends BaseView {
 
     }
+
     interface Presenter extends IPresenter {
         void testActivity();
+
         void testFragment();
     }
 

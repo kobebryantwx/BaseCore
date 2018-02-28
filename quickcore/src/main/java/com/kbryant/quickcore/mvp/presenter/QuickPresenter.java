@@ -2,8 +2,9 @@ package com.kbryant.quickcore.mvp.presenter;
 
 import com.kbryant.quickcore.mvp.model.ModelHelper;
 
-public class QuickPresenter extends Presenter implements IQuickPresenter{
+public class QuickPresenter extends Presenter implements IQuickPresenter {
     private ModelHelper modelHelper;
+
     public QuickPresenter(ModelHelper modelHelper) {
         this.modelHelper = modelHelper;
     }
@@ -17,6 +18,7 @@ public class QuickPresenter extends Presenter implements IQuickPresenter{
     public ModelHelper modelHelper() {
         return modelHelper;
     }
+
     @Override
     public void detachView() {
         super.detachView();

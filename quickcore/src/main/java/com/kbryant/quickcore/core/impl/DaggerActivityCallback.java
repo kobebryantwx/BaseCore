@@ -28,8 +28,10 @@ public class DaggerActivityCallback<T> implements Application.ActivityLifecycleC
             HasDaggerInject<T> callActivity = (HasDaggerInject<T>) activity;
             callActivity.inject(call);
         }
-        DaggerFragmentCallback<T> daggerFragmentCallback = new DaggerFragmentCallback<>(call);
-        ((AppCompatActivity) activity).getSupportFragmentManager().registerFragmentLifecycleCallbacks(daggerFragmentCallback, true);
+        if (activity instanceof AppCompatActivity) {
+            DaggerFragmentCallback<T> daggerFragmentCallback = new DaggerFragmentCallback<>(call);
+            ((AppCompatActivity) activity).getSupportFragmentManager().registerFragmentLifecycleCallbacks(daggerFragmentCallback, true);
+        }
     }
 
 

@@ -46,7 +46,15 @@ public class RXUtil {
                     @Override
                     public Publisher<T> apply(@NonNull RespBase<T> tRespBase) throws Exception {
                         if (tRespBase.getCode() == 0) {
-                            return createData(tRespBase.getData());
+                            T t = tRespBase.getData();
+                            if (t == null) {
+                                try {
+                                    t = (T) "";
+                                } catch (ClassCastException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            return createData(t);
                         } else {
                             return Flowable.error(new ApiException(tRespBase.getMsg(), tRespBase.getCode(), tRespBase.getIs_alert() == 1));
                         }

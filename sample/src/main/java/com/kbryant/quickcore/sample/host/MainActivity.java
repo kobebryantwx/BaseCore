@@ -18,18 +18,16 @@ import com.kbryant.quickcore.sample.host.fragment.TestFragment;
 
 import me.militch.quickcore.sample.R;
 
-public class MainActivity extends BaseActivity implements
-        MainContract.View,
-        HasDaggerInject<ActivityComponent>,
-        View.OnClickListener {
+public class MainActivity extends BaseActivity implements MainContract.View, HasDaggerInject<ActivityComponent>, View.OnClickListener {
+
     private Button button;
+
     @Inject
     MainPresenter mainPresenter;
 
     @Override
     public void onClick(View v) {
         mainPresenter.testActivity();
-
     }
 
     @Override
@@ -44,7 +42,6 @@ public class MainActivity extends BaseActivity implements
         TestFragment fragment = TestFragment.newInstance();
         replacef(R.id.test_content, fragment);
     }
-
 
     @Override
     public void showToastMsg(String msg) {

@@ -32,6 +32,9 @@ public final class TargetSubscribeEvent<T> extends ResourceSubscriber<T> {
             HttpException httpException = (HttpException) t;
             ApiException apiException = new ApiException("网络请求失败", httpException.code());
             badEvent.call(apiException);
+        } else {
+            ApiException apiException = new ApiException(t.getLocalizedMessage());
+            badEvent.call(apiException);
         }
     }
 
