@@ -14,6 +14,9 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * Http配置类
+ */
 @Module
 public class HttpConfigModule {
     private String host;

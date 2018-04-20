@@ -14,6 +14,7 @@ import dagger.Module;
 import dagger.Provides;
 
 import com.kbryant.quickcore.repository.impl.RepositoryStore;
+
 import retrofit2.Retrofit;
 
 /**

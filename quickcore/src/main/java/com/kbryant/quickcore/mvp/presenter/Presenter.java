@@ -8,6 +8,9 @@ import com.kbryant.quickcore.mvp.IPresenter;
 import java.lang.reflect.Type;
 import java.util.Arrays;
 
+/**
+ * presenter基类
+ */
 public class Presenter implements IPresenter {
     protected Activity activity;
     protected Fragment fragment;

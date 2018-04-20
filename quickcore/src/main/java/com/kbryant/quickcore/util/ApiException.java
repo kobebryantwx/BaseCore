@@ -1,5 +1,8 @@
 package com.kbryant.quickcore.util;
 
+/**
+ * 请求异常类
+ */
 public class ApiException extends Exception {
     private boolean isAlter;
     private int code;

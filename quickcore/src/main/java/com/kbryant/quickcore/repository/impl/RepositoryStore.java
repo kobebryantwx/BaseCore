@@ -11,22 +11,24 @@ import retrofit2.Retrofit;
 
 public class RepositoryStore implements IRepositoryStore {
     private Retrofit retrofit;
-        private HashMap<Class,Object> retrofitServices = new HashMap<>();
+    private HashMap<Class, Object> retrofitServices = new HashMap<>();
+
     @Inject
-    public RepositoryStore(Retrofit retrofit){
+    public RepositoryStore(Retrofit retrofit) {
         this.retrofit = retrofit;
     }
+
     @Override
     public void addRetrofitService(Class<?>... services) {
-        for(Class service : services){
-            retrofitServices.put(service,retrofit.create(service));
+        for (Class service : services) {
+            retrofitServices.put(service, retrofit.create(service));
         }
     }
 
     @Override
     public void addRetrofitService(List<Class> services) {
-        for(Class service : services){
-            retrofitServices.put(service,retrofit.create(service));
+        for (Class service : services) {
+            retrofitServices.put(service, retrofit.create(service));
         }
     }
 

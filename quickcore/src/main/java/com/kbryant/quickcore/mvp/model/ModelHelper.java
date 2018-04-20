@@ -9,11 +9,15 @@ import javax.inject.Inject;
 
 import io.reactivex.Flowable;
 import io.reactivex.disposables.CompositeDisposable;
+
 import com.kbryant.quickcore.event.RespEvent;
 import com.kbryant.quickcore.repository.impl.RepositoryStore;
 import com.kbryant.quickcore.util.EventCall;
 import com.kbryant.quickcore.util.RespBase;
 
+/**
+ * 请求处理实现类
+ */
 public class ModelHelper implements IModelHelper {
     private CompositeDisposable compositeDisposable;
     private RepositoryStore repositoryStore;

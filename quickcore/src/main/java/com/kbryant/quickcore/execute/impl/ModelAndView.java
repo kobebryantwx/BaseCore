@@ -9,6 +9,11 @@ import com.kbryant.quickcore.util.RespBase;
 
 import io.reactivex.Flowable;
 
+/**
+ * 请求数据实现类
+ *
+ * @param <V>
+ */
 public class ModelAndView<V> implements IModelAndView<V> {
     private ModelHelper modelHelper;
     private V view;

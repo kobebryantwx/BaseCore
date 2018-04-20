@@ -46,7 +46,7 @@ dependencies {
     api 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
     api 'com.google.dagger:dagger:2.11'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
-    compile 'com.BaseCore:basecore-annotation:1.0.0'
+    api 'com.BaseCore:basecore-annotation:1.0.0'
     api "io.reactivex.rxjava2:rxjava:2.1.1"
     api 'io.reactivex.rxjava2:rxandroid:2.0.1'
 }

@@ -1,5 +1,10 @@
 package com.kbryant.quickcore.util;
 
+/**
+ * 请求返回数据基类
+ *
+ * @param <T>
+ */
 public class RespBase<T> {
     private int code;
     private int is_alert;

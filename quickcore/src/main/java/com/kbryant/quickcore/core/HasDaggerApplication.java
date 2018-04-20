@@ -7,6 +7,8 @@ import com.kbryant.quickcore.di.module.HttpConfigModule;
 
 public interface HasDaggerApplication<T> {
     GlobalConfigModule setupGlobalConfigModule();
+
     HttpConfigModule setupHttpConfigModule();
+
     T activityComponent(AppComponent appComponent);
 }

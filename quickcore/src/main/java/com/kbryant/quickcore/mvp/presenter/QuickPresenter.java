@@ -2,6 +2,9 @@ package com.kbryant.quickcore.mvp.presenter;
 
 import com.kbryant.quickcore.mvp.model.ModelHelper;
 
+/**
+ * presenter封装类（封装model类）
+ */
 public class QuickPresenter extends Presenter implements IQuickPresenter {
     private ModelHelper modelHelper;
 

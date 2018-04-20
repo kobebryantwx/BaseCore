@@ -12,6 +12,9 @@ import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * RxJava方法类
+ */
 public class RXUtil {
     /**
      * 统一线程切换处理

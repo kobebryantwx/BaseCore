@@ -23,14 +23,13 @@
 
 ```
 dependencies{
-    compile project(':quickcore')
-    annotationProcessor project(':quickcore-compiler')
+    annotationProcessor 'com.BaseCore:basecore-compiler:1.0.0'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+    implementation project(':quickcore')
 }
 ```
 
 ## LICENSE
-    Copyright 2017 militch
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

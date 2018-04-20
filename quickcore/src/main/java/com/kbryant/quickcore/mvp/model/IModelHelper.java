@@ -1,6 +1,7 @@
 package com.kbryant.quickcore.mvp.model;
 
 import io.reactivex.Flowable;
+
 import com.kbryant.quickcore.event.RespEvent;
 import com.kbryant.quickcore.util.ApiException;
 import com.kbryant.quickcore.util.EventCall;

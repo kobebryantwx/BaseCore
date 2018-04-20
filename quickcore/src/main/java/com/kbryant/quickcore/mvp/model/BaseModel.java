@@ -6,11 +6,13 @@ import com.kbryant.quickcore.repository.impl.RepositoryStore;
 
 public abstract class BaseModel implements IModel {
     private IRepositoryStore repositoryStore;
-    public BaseModel(RepositoryStore repositoryStore){
+
+    public BaseModel(RepositoryStore repositoryStore) {
         this.repositoryStore = repositoryStore;
     }
+
     @Override
-    public IRepositoryStore store(){
+    public IRepositoryStore store() {
         return repositoryStore;
     }
 }
